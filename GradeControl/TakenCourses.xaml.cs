@@ -28,9 +28,17 @@ namespace GradeControl
         {
             if (e_e1.IsChecked.Value && e_e2.IsChecked.Value && e_q1.IsChecked.Value && e_q2.IsChecked.Value && e_q3.IsChecked.Value && e_q4.IsChecked.Value)
                 return true;
-            else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value && l_q1.IsChecked.Value && l_q2.IsChecked.Value && l_q3.IsChecked.Value && l_q4.IsChecked.Value)
-                return true;
             else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value && f_q1.IsChecked.Value && f_q2.IsChecked.Value && f_q3.IsChecked.Value && f_q4.IsChecked.Value)
+                return true;
+            else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value && it_q1.IsChecked.Value && it_q2.IsChecked.Value && it_q3.IsChecked.Value && it_q4.IsChecked.Value)
+                return true;
+            else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value && sp_q1.IsChecked.Value && sp_q2.IsChecked.Value && sp_q3.IsChecked.Value && sp_q4.IsChecked.Value)
+                return true;
+            else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value && ru_q1.IsChecked.Value && ru_q2.IsChecked.Value && ru_q3.IsChecked.Value && ru_q4.IsChecked.Value)
+                return true;
+            else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value && gr_q1.IsChecked.Value && gr_q2.IsChecked.Value && gr_q3.IsChecked.Value && gr_q4.IsChecked.Value)
+                return true;
+            else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value && l_q1.IsChecked.Value && l_q2.IsChecked.Value && l_q3.IsChecked.Value && l_q4.IsChecked.Value)
                 return true;
             else
                 return false;
@@ -78,9 +86,92 @@ namespace GradeControl
 
             if (e_e1.IsChecked.Value && e_e2.IsChecked.Value && e_q1.IsChecked.Value && e_q2.IsChecked.Value && e_q3.IsChecked.Value && e_q4.IsChecked.Value)
             {
-                if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
+                    z5 = true;
+                else if (it_q1.IsChecked.Value && it_q2.IsChecked.Value)
+                    z5 = true;
+                else if (sp_q1.IsChecked.Value && sp_q2.IsChecked.Value)
+                    z5 = true;
+                else if (ru_q1.IsChecked.Value && ru_q2.IsChecked.Value)
+                    z5 = true;
+                else if (gr_q1.IsChecked.Value && gr_q2.IsChecked.Value)
+                    z5 = true;
+                else if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                    z5 = true;
+            }
+            else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value && f_q1.IsChecked.Value && f_q2.IsChecked.Value && f_q3.IsChecked.Value && f_q4.IsChecked.Value)
+            {
+                if (e_q1.IsChecked.Value && e_q2.IsChecked.Value)
+                    z5 = true;
+                else if (it_q1.IsChecked.Value && it_q2.IsChecked.Value)
+                    z5 = true;
+                else if (sp_q1.IsChecked.Value && sp_q2.IsChecked.Value)
+                    z5 = true;
+                else if (ru_q1.IsChecked.Value && ru_q2.IsChecked.Value)
+                    z5 = true;
+                else if (gr_q1.IsChecked.Value && gr_q2.IsChecked.Value)
+                    z5 = true;
+                else if(l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                    z5 = true;
+            }
+            else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value && it_q1.IsChecked.Value && it_q2.IsChecked.Value && it_q3.IsChecked.Value && it_q4.IsChecked.Value)
+            {
+                if (e_q1.IsChecked.Value && e_q2.IsChecked.Value)
                     z5 = true;
                 else if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
+                    z5 = true;
+                else if (sp_q1.IsChecked.Value && sp_q2.IsChecked.Value)
+                    z5 = true;
+                else if (ru_q1.IsChecked.Value && ru_q2.IsChecked.Value)
+                    z5 = true;
+                else if (gr_q1.IsChecked.Value && gr_q2.IsChecked.Value)
+                    z5 = true;
+                else if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                    z5 = true;
+            }
+            else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value && sp_q1.IsChecked.Value && sp_q2.IsChecked.Value && sp_q3.IsChecked.Value && sp_q4.IsChecked.Value)
+            {
+                if (e_q1.IsChecked.Value && e_q2.IsChecked.Value)
+                    z5 = true;
+                else if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
+                    z5 = true;
+                else if (it_q1.IsChecked.Value && it_q2.IsChecked.Value)
+                    z5 = true;
+                else if (ru_q1.IsChecked.Value && ru_q2.IsChecked.Value)
+                    z5 = true;
+                else if (gr_q1.IsChecked.Value && gr_q2.IsChecked.Value)
+                    z5 = true;
+                else if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                    z5 = true;
+            }
+            else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value && ru_q1.IsChecked.Value && ru_q2.IsChecked.Value && ru_q3.IsChecked.Value && ru_q4.IsChecked.Value)
+            {
+                if (e_q1.IsChecked.Value && e_q2.IsChecked.Value)
+                    z5 = true;
+                else if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
+                    z5 = true;
+                else if (it_q1.IsChecked.Value && it_q2.IsChecked.Value)
+                    z5 = true;
+                else if (sp_q1.IsChecked.Value && sp_q2.IsChecked.Value)
+                    z5 = true;
+                else if (gr_q1.IsChecked.Value && gr_q2.IsChecked.Value)
+                    z5 = true;
+                else if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                    z5 = true;
+            }
+            else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value && gr_q1.IsChecked.Value && gr_q2.IsChecked.Value && gr_q3.IsChecked.Value && gr_q4.IsChecked.Value)
+            {
+                if (e_q1.IsChecked.Value && e_q2.IsChecked.Value)
+                    z5 = true;
+                else if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
+                    z5 = true;
+                else if (it_q1.IsChecked.Value && it_q2.IsChecked.Value)
+                    z5 = true;
+                else if (sp_q1.IsChecked.Value && sp_q2.IsChecked.Value)
+                    z5 = true;
+                else if (ru_q1.IsChecked.Value && ru_q2.IsChecked.Value)
+                    z5 = true;
+                else if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
                     z5 = true;
             }
             else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value && l_q1.IsChecked.Value && l_q2.IsChecked.Value && l_q3.IsChecked.Value && l_q4.IsChecked.Value)
@@ -89,14 +180,16 @@ namespace GradeControl
                     z5 = true;
                 else if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
                     z5 = true;
-            }
-            else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value && f_q1.IsChecked.Value && f_q2.IsChecked.Value && f_q3.IsChecked.Value && f_q4.IsChecked.Value)
-            {
-                if (l_q1.IsChecked.Value && l_q2.IsChecked.Value)
+                else if (it_q1.IsChecked.Value && it_q2.IsChecked.Value)
                     z5 = true;
-                else if (f_q1.IsChecked.Value && f_q2.IsChecked.Value)
+                else if (sp_q1.IsChecked.Value && sp_q2.IsChecked.Value)
+                    z5 = true;
+                else if (ru_q1.IsChecked.Value && ru_q2.IsChecked.Value)
+                    z5 = true;
+                else if (gr_q1.IsChecked.Value && gr_q2.IsChecked.Value)
                     z5 = true;
             }
+
             else if (p_e1.IsChecked.Value && p_e2.IsChecked.Value && p_q1.IsChecked.Value && p_q2.IsChecked.Value && p_q3.IsChecked.Value && p_q4.IsChecked.Value)
             {
                 if (b_q1.IsChecked.Value && b_q2.IsChecked.Value)
@@ -140,20 +233,131 @@ namespace GradeControl
                 return false;
         }
 
-        private bool IsZ8() //z8: Lat/Frz von E1-E2
+        private bool IsZ8() //z8: Zweite Fremdsprache von E1-E2
         {
-            if (l_e1.IsChecked.Value && l_e2.IsChecked.Value)
-                return true;
-            else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+            bool z8 = false;
+
+            if (e_e1.IsChecked.Value && e_e2.IsChecked.Value && e_q1.IsChecked.Value && e_q2.IsChecked.Value && e_q3.IsChecked.Value && e_q4.IsChecked.Value)
+            {
+                if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+                    z8 = true;
+                else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value)
+                    z8 = true;
+                else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value)
+                    z8 = true;
+                else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value)
+                    z8 = true;
+                else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value)
+                    z8 = true;
+                else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value)
+                    z8 = true;
+            }
+            else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value && f_q1.IsChecked.Value && f_q2.IsChecked.Value && f_q3.IsChecked.Value && f_q4.IsChecked.Value)
+            {
+                if (e_e1.IsChecked.Value && e_e2.IsChecked.Value)
+                    z8 = true;
+                else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value)
+                    z8 = true;
+                else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value)
+                    z8 = true;
+                else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value)
+                    z8 = true;
+                else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value)
+                    z8 = true;
+                else if(l_e1.IsChecked.Value && l_e2.IsChecked.Value)
+                    z8 = true;
+            }
+            else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value && it_q1.IsChecked.Value && it_q2.IsChecked.Value && it_q3.IsChecked.Value && it_q4.IsChecked.Value)
+            {
+                if (e_e1.IsChecked.Value && e_e2.IsChecked.Value)
+                    z8 = true;
+                else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+                    z8 = true;
+                else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value)
+                    z8 = true;
+                else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value)
+                    z8 = true;
+                else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value)
+                    z8 = true;
+                else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value)
+                    z8 = true;
+            }
+            else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value && sp_q1.IsChecked.Value && sp_q2.IsChecked.Value && sp_q3.IsChecked.Value && sp_q4.IsChecked.Value)
+            {
+                if (e_e1.IsChecked.Value && e_e2.IsChecked.Value)
+                    z8 = true;
+                else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+                    z8 = true;
+                else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value)
+                    z8 = true;
+                else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value)
+                    z8 = true;
+                else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value)
+                    z8 = true;
+                else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value)
+                    z8 = true;
+            }
+            else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value && ru_q1.IsChecked.Value && ru_q2.IsChecked.Value && ru_q3.IsChecked.Value && ru_q4.IsChecked.Value)
+            {
+                if (e_e1.IsChecked.Value && e_e2.IsChecked.Value)
+                    z8 = true;
+                else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+                    z8 = true;
+                else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value)
+                    z8 = true;
+                else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value)
+                    z8 = true;
+                else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value)
+                    z8 = true;
+                else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value)
+                    z8 = true;
+            }
+            else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value && gr_q1.IsChecked.Value && gr_q2.IsChecked.Value && gr_q3.IsChecked.Value && gr_q4.IsChecked.Value)
+            {
+                if (e_e1.IsChecked.Value && e_e2.IsChecked.Value)
+                    z8 = true;
+                else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+                    z8 = true;
+                else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value)
+                    z8 = true;
+                else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value)
+                    z8 = true;
+                else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value)
+                    z8 = true;
+                else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value)
+                    z8 = true;
+            }
+            else if (l_e1.IsChecked.Value && l_e2.IsChecked.Value && l_q1.IsChecked.Value && l_q2.IsChecked.Value && l_q3.IsChecked.Value && l_q4.IsChecked.Value)
+            {
+                if (e_e1.IsChecked.Value && e_e2.IsChecked.Value)
+                    z8 = true;
+                else if (f_e1.IsChecked.Value && f_e2.IsChecked.Value)
+                    z8 = true;
+                else if (it_e1.IsChecked.Value && it_e2.IsChecked.Value)
+                    z8 = true;
+                else if (sp_e1.IsChecked.Value && sp_e2.IsChecked.Value)
+                    z8 = true;
+                else if (ru_e1.IsChecked.Value && ru_e2.IsChecked.Value)
+                    z8 = true;
+                else if (gr_e1.IsChecked.Value && gr_e2.IsChecked.Value)
+                    z8 = true;
+            }
+
+            return z8;
+        }
+
+        private bool IsZ9() //z9: PW/Ec von E1-E2 (optional alternierend) und Q1/2
+        {
+            if ((pw_e1.IsChecked.Value ^ ec_e1.IsChecked.Value) && ((pw_e2.IsChecked.Value && pw_q1.IsChecked.Value && pw_q2.IsChecked.Value) || (ec_e2.IsChecked.Value && ec_q1.IsChecked.Value && ec_q2.IsChecked.Value)))
                 return true;
             else
                 return false;
         }
 
-        private bool IsZ9() //z9: 2 LKs
+        private bool IsZ10() //z10: 2 LKs
         {
             int k = 0;
-            bool[] lks = new bool[] { d_lk.IsChecked.Value, e_lk.IsChecked.Value, f_lk.IsChecked.Value, l_lk.IsChecked.Value, mu_lk.IsChecked.Value, ku_lk.IsChecked.Value, ds_lk.IsChecked.Value, g_lk.IsChecked.Value, pw_lk.IsChecked.Value, evrel_lk.IsChecked.Value, kathrel_lk.IsChecked.Value, eth_lk.IsChecked.Value, m_lk.IsChecked.Value, b_lk.IsChecked.Value, c_lk.IsChecked.Value, p_lk.IsChecked.Value, inf_lk.IsChecked.Value, pe_lk.IsChecked.Value };
+            bool[] lks = new bool[] { d_lk.IsChecked.Value, e_lk.IsChecked.Value, f_lk.IsChecked.Value, it_lk.IsChecked.Value, sp_lk.IsChecked.Value, ru_lk.IsChecked.Value, gr_lk.IsChecked.Value, l_lk.IsChecked.Value, mu_lk.IsChecked.Value, ku_lk.IsChecked.Value, g_lk.IsChecked.Value, pw_lk.IsChecked.Value, ec_lk.IsChecked.Value, ek_lk.IsChecked.Value, evrel_lk.IsChecked.Value, kathrel_lk.IsChecked.Value, m_lk.IsChecked.Value, b_lk.IsChecked.Value, c_lk.IsChecked.Value, p_lk.IsChecked.Value, inf_lk.IsChecked.Value, pe_lk.IsChecked.Value };
             for (int i = 0; i < lks.Length; i++)
                 if (lks[i])
                     k++;
@@ -208,12 +412,19 @@ namespace GradeControl
             }
             if (!IsZ9())
             {
+                MessageBox.Show("Politik und Wirtschaft/Wirtschaftswissenschaften wurde nicht in der Einführungsphase sowie durchgängig in den ersten beiden Halbjahren der Qualifikationsphase belegt.");
+                return;
+            }
+            if (!IsZ10())
+            {
                 MessageBox.Show("Es wurden mehr/weniger als zwei LKs belegt.");
                 return;
             }
 
-            this.Close();
+            //Course[]
         }
+
+
 
         private void d_lk_Checked(object sender, RoutedEventArgs e)
         {
@@ -243,6 +454,46 @@ namespace GradeControl
             f_q2.IsChecked = true;
             f_q3.IsChecked = true;
             f_q4.IsChecked = true;
+        }
+
+        private void it_lk_Checked(object sender, RoutedEventArgs e)
+        {
+            it_e1.IsChecked = true;
+            it_e2.IsChecked = true;
+            it_q1.IsChecked = true;
+            it_q2.IsChecked = true;
+            it_q3.IsChecked = true;
+            it_q4.IsChecked = true;
+        }
+
+        private void sp_lk_Checked(object sender, RoutedEventArgs e)
+        {
+            sp_e1.IsChecked = true;
+            f_e2.IsChecked = true;
+            sp_q1.IsChecked = true;
+            sp_q2.IsChecked = true;
+            sp_q3.IsChecked = true;
+            sp_q4.IsChecked = true;
+        }
+
+        private void ru_lk_Checked(object sender, RoutedEventArgs e)
+        {
+            ru_e1.IsChecked = true;
+            ru_e2.IsChecked = true;
+            ru_q1.IsChecked = true;
+            ru_q2.IsChecked = true;
+            ru_q3.IsChecked = true;
+            ru_q4.IsChecked = true;
+        }
+
+        private void gr_lk_Checked(object sender, RoutedEventArgs e)
+        {
+            gr_e1.IsChecked = true;
+            gr_e2.IsChecked = true;
+            gr_q1.IsChecked = true;
+            gr_q2.IsChecked = true;
+            gr_q3.IsChecked = true;
+            gr_q4.IsChecked = true;
         }
 
         private void l_lk_Checked(object sender, RoutedEventArgs e)
@@ -275,16 +526,6 @@ namespace GradeControl
             ku_q4.IsChecked = true;
         }
 
-        private void ds_lk_Checked(object sender, RoutedEventArgs e)
-        {
-            ds_e1.IsChecked = true;
-            ds_e2.IsChecked = true;
-            ds_q1.IsChecked = true;
-            ds_q2.IsChecked = true;
-            ds_q3.IsChecked = true;
-            ds_q4.IsChecked = true;
-        }
-
         private void g_lk_Checked(object sender, RoutedEventArgs e)
         {
             g_e1.IsChecked = true;
@@ -303,6 +544,24 @@ namespace GradeControl
             pw_q2.IsChecked = true;
             pw_q3.IsChecked = true;
             pw_q4.IsChecked = true;
+        }
+        private void ec_lk_Checked(object sender, RoutedEventArgs e)
+        {
+            ec_e1.IsChecked = true;
+            ec_e2.IsChecked = true;
+            ec_q1.IsChecked = true;
+            ec_q2.IsChecked = true;
+            ec_q3.IsChecked = true;
+            ec_q4.IsChecked = true;
+        }
+        private void ek_lk_Checked(object sender, RoutedEventArgs e)
+        {
+            ek_e1.IsChecked = true;
+            ek_e2.IsChecked = true;
+            ek_q1.IsChecked = true;
+            ek_q2.IsChecked = true;
+            ek_q3.IsChecked = true;
+            ek_q4.IsChecked = true;
         }
 
         private void evrel_lk_Checked(object sender, RoutedEventArgs e)
@@ -323,16 +582,6 @@ namespace GradeControl
             kathrel_q2.IsChecked = true;
             kathrel_q3.IsChecked = true;
             kathrel_q4.IsChecked = true;
-        }
-
-        private void eth_lk_Checked(object sender, RoutedEventArgs e)
-        {
-            eth_e1.IsChecked = true;
-            eth_e2.IsChecked = true;
-            eth_q1.IsChecked = true;
-            eth_q2.IsChecked = true;
-            eth_q3.IsChecked = true;
-            eth_q4.IsChecked = true;
         }
 
         private void m_lk_Checked(object sender, RoutedEventArgs e)

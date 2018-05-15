@@ -25,10 +25,32 @@ namespace GradeControl
             InitializeComponent();
         }
 
+        public void OpenStudentSelection(object sender, RoutedEventArgs e)
+        {
+            TakenCourses takenCourses = new TakenCourses();
+            takenCourses.Show();
+        }
+
         public void OpenTakenCourses(object sender, RoutedEventArgs e)
         {
             TakenCourses takenCourses = new TakenCourses();
             takenCourses.Show();
+        }
+
+        public void OpenChosenExams(object sender, RoutedEventArgs e)
+        {
+            ChosenExams chosenExams = new ChosenExams();
+            chosenExams.Show();
+        }
+
+        private void delete_Student_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void add_Student_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
