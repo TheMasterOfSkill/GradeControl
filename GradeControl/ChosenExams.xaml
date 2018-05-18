@@ -12,17 +12,17 @@
                 <Label x:Name="lk1" Content="LK 1" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lk2" Content="LK 2" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="gk3" Content="GK 3" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="lk1_cb" HorizontalAlignment="Left" Margin="84,22,0,0" VerticalAlignment="Top" Width="159"/>
-                <ComboBox x:Name="lk2_cb" HorizontalAlignment="Left" Margin="84,52,0,0" VerticalAlignment="Top" Width="159"/>
-                <ComboBox x:Name="gk3_cb" HorizontalAlignment="Left" Margin="84,82,0,0" VerticalAlignment="Top" Width="159"/>
+                <ComboBox x:Name="lk1_cb" HorizontalAlignment="Left" Margin="84,22,0,0" VerticalAlignment="Top" Width="159" IsSynchronizedWithCurrentItem="True" SelectionChanged="lk1_cb_SelectionChanged"/>
+                <ComboBox x:Name="lk2_cb" HorizontalAlignment="Left" Margin="84,52,0,0" VerticalAlignment="Top" Width="159" IsSynchronizedWithCurrentItem="True" SelectionChanged="lk2_cb_SelectionChanged"/>
+                <ComboBox x:Name="gk3_cb" HorizontalAlignment="Left" Margin="84,82,0,0" VerticalAlignment="Top" Width="159" IsSynchronizedWithCurrentItem="True" SelectionChanged="gk3_cb_SelectionChanged"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="oral" Header="Mündliche Prüfungen" HorizontalAlignment="Left" Height="108" Margin="10,180,0,0" VerticalAlignment="Top" Width="274">
             <Grid>
                 <Label x:Name="gk4" Content="GK 4" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="gk5" Content="GK 5" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="gk4_cb" HorizontalAlignment="Left" Margin="84,22,0,0" VerticalAlignment="Top" Width="159"/>
-                <ComboBox x:Name="gk5_cb" HorizontalAlignment="Left" Margin="84,52,0,0" VerticalAlignment="Top" Width="159"/>
+                <ComboBox x:Name="gk4_cb" HorizontalAlignment="Left" Margin="84,22,0,0" VerticalAlignment="Top" Width="159" IsSynchronizedWithCurrentItem="True" SelectionChanged="gk4_cb_SelectionChanged"/>
+                <ComboBox x:Name="gk5_cb" HorizontalAlignment="Left" Margin="84,52,0,0" VerticalAlignment="Top" Width="159" IsSynchronizedWithCurrentItem="True" SelectionChanged="gk5_cb_SelectionChanged"/>
             </Grid>
         </GroupBox>
 

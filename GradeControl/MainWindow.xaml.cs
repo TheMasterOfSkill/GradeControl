@@ -20,20 +20,28 @@ namespace GradeControl
     /// </summary>
     public partial class MainWindow : Window
     {
+        SqlManager sqlManager = new SqlManager();
+
         public MainWindow()
         {
             InitializeComponent();
+            sqlManager.CreateDatabase();
         }
 
         public void OpenStudentSelection(object sender, RoutedEventArgs e)
         {
-            TakenCourses takenCourses = new TakenCourses();
+            TakenCourses takenCourses = new TakenCourses(this);
             takenCourses.Show();
+        }
+
+        public void FillInData(Course[] courses, Exam[] exams)
+        {
+
         }
 
         public void OpenTakenCourses(object sender, RoutedEventArgs e)
         {
-            TakenCourses takenCourses = new TakenCourses();
+            TakenCourses takenCourses = new TakenCourses(this);
             takenCourses.Show();
         }
 
