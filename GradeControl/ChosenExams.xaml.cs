@@ -19,10 +19,10 @@ namespace GradeControl
     /// </summary>
     public partial class ChosenExams : Window
     {
-        MainWindow mainWindow;
+        private MainWindow mainWindow;
         private bool lkChange = true;
-        List<Course> gk3s;
-        List<Course> gk4s;
+        private List<Course> gk3s;
+        private List<Course> gk4s;
         private Course[] allCourses;
         private Course[] lks;
         private Course[] testableGKs;
@@ -153,11 +153,22 @@ namespace GradeControl
             return gk4s.Where(gk => isGK5(gk, gk4.Name, new Course[] { lk1Course, lk2Course, gk3C, gk4C, gk })).ToArray();
         }
 
+        private Exam[] GetExams()
+        {
+            Exam[] exams = new Exam[5];
+            exams[0] = new Exam(lk1Course.Name, 0);
+            exams[1] = new Exam(lk2Course.Name, 0);
+            exams[2] = new Exam(gk3Course.Name, 0);
+            exams[3] = new Exam(gk4Course.Name, 0);
+            exams[4] = new Exam(gk5Course.Name, 0);
+
+            return exams;
+        }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(lk1Course.Name + "\n" + lk2Course.Name + "\n" + gk3Course.Name + "\n" + gk4Course.Name + "\n" + gk5Course.Name);
-
-            mainWindow.
+            mainWindow.FillInData(allCourses, GetExams());
+            this.Close();
         }
 
         private void lk1_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)

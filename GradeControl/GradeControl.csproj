@@ -76,7 +76,13 @@
       <DependentUpon>ChosenExams.xaml</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="CourseItem.cs" />
+    <Compile Include="DataGridStyler.cs" />
     <Compile Include="Exam.cs" />
+    <Compile Include="ExamItem.cs" />
+    <Compile Include="QuarterCourse.cs" />
+    <Compile Include="RelevantCourse.cs" />
+    <Compile Include="Relevantor.cs" />
     <Compile Include="SqlManager.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="TakenCourses.xaml.cs">

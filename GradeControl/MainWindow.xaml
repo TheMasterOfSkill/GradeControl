@@ -31,33 +31,15 @@
         <Button x:Name="delete_Student" Content="Löschen" HorizontalAlignment="Left" Margin="112,385,0,0" VerticalAlignment="Top" Height="25" Width="65" Click="delete_Student_Click"/>
 
         <Label x:Name="labelBC" Content="Grundkurse" HorizontalAlignment="Left" Margin="209,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <DataGrid x:Name="dataGridBC" HorizontalAlignment="Left" Height="199" Margin="209,66,0,0" VerticalAlignment="Top" Width="289" ColumnWidth="*">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Fach" Width="0.4*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q1" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q2" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q3" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q4" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-            </DataGrid.Columns>
+        <DataGrid x:Name="dataGridBC" HorizontalAlignment="Left" Height="199" Margin="209,66,0,0" VerticalAlignment="Top" Width="290" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*">
         </DataGrid>
 
         <Label x:Name="labelSC" Content="Leistungskurse" HorizontalAlignment="Left" Margin="539,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <DataGrid x:Name="dataGridSC" HorizontalAlignment="Left" Height="199" Margin="539,66,0,0" VerticalAlignment="Top" Width="289" ColumnWidth="*">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Fach" Width="0.4*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q1" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q2" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q3" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Q4" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-            </DataGrid.Columns>
+        <DataGrid x:Name="dataGridSC" HorizontalAlignment="Left" Height="199" Margin="539,66,0,0" VerticalAlignment="Top" Width="290" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*">
         </DataGrid>
 
         <Label x:Name="labelA" Content="Abiturprüfungen" HorizontalAlignment="Left" Margin="869,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <DataGrid x:Name="dataGridA" HorizontalAlignment="Left" Height="199" Margin="869,66,0,0" VerticalAlignment="Top" Width="200" ColumnWidth="*">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Fach" Width="0.4*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Note" Width="0.15*" CanUserSort="False" CanUserReorder="False" CanUserResize="False"/>
-            </DataGrid.Columns>
+        <DataGrid x:Name="dataGridA" HorizontalAlignment="Left" Height="199" Margin="869,66,0,0" VerticalAlignment="Top" Width="200" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*">
         </DataGrid>
 
         <Label x:Name="labelBCTot" Content="Σ   .bctot. / 360 Pkt." HorizontalAlignment="Left" Margin="209,270,0,0" VerticalAlignment="Top" FontSize="18"/>

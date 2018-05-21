@@ -12,11 +12,11 @@ namespace GradeControl
 {
     public class SqlManager
     {
-        StringBuilder sqlQueue = new StringBuilder();
-        SQLiteConnection dbConnection;
-        Timer timer;
-        const string DB_FILENAME = "GradeControl.sqlite";
-        const int TIMER_INTERVAL = 60000;
+        private StringBuilder sqlQueue = new StringBuilder();
+        private SQLiteConnection dbConnection;
+        private Timer timer;
+        private const string DB_FILENAME = "GradeControl.sqlite";
+        private const int TIMER_INTERVAL = 60000;
 
         public void startTimedDBUpdate()
         {

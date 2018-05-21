@@ -5,263 +5,266 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeControl"
         mc:Ignorable="d"
-        Title="Kursbelegung" Height="600" Width="510" ResizeMode="CanMinimize">
+        Title="Kursbelegung" Height="650" Width="510" ResizeMode="CanMinimize">
 
-    <ScrollViewer>
-        <Grid>
-            <Label x:Name="subject" Content="Fach" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lk" Content="LK" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="e1" Content="E1" HorizontalAlignment="Left" Margin="195,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="e2" Content="E2" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="q1" Content="Q1" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="q2" Content="Q2" HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="q3" Content="Q3" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="q4" Content="Q4" HorizontalAlignment="Left" Margin="420,10,0,0" VerticalAlignment="Top"/>
+    <Grid>
+        <Label x:Name="subject" Content="Fach" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lk" Content="LK" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="e1" Content="E1" HorizontalAlignment="Left" Margin="195,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="e2" Content="E2" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="q1" Content="Q1" HorizontalAlignment="Left" Margin="285,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="q2" Content="Q2" HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="q3" Content="Q3" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="q4" Content="Q4" HorizontalAlignment="Left" Margin="420,10,0,0" VerticalAlignment="Top"/>
 
-            <GroupBox x:Name="fb1" Header="Fachbereich I" HorizontalAlignment="Left" Height="374" Margin="10,45,0,0" VerticalAlignment="Top" Width="457">
-                <Grid>
-                    <Label x:Name="german" Content="Deutsch" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="d_lk" Content="" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="d_e1" Content="" HorizontalAlignment="Left" Margin="183,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="d_e2" Content="" HorizontalAlignment="Left" Margin="228,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="d_q1" Content="" HorizontalAlignment="Left" Margin="273,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="d_q2" Content="" HorizontalAlignment="Left" Margin="318,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="d_q3" Content="" HorizontalAlignment="Left" Margin="363,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="d_q4" Content="" HorizontalAlignment="Left" Margin="408,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+        <ScrollViewer Margin="0,50,0,70">
+            <Grid>
+                <GroupBox x:Name="fb1" Header="Fachbereich I" HorizontalAlignment="Left" Height="374" Margin="10,0,0,0" VerticalAlignment="Top" Width="457">
+                    <Grid>
+                        <Label x:Name="german" Content="Deutsch" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="d_lk" Content="" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="d_e1" Content="" HorizontalAlignment="Left" Margin="183,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="d_e2" Content="" HorizontalAlignment="Left" Margin="228,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="d_q1" Content="" HorizontalAlignment="Left" Margin="273,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="d_q2" Content="" HorizontalAlignment="Left" Margin="318,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="d_q3" Content="" HorizontalAlignment="Left" Margin="363,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="d_q4" Content="" HorizontalAlignment="Left" Margin="408,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
 
-                    <Label x:Name="english" Content="Englisch" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="e_lk" Content="" HorizontalAlignment="Left" Margin="138,47,0,0" VerticalAlignment="Top" Checked="e_lk_Checked" Unchecked="e_lk_Unchecked" />
-                    <CheckBox x:Name="e_e1" Content="" HorizontalAlignment="Left" Margin="183,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="e_e2" Content="" HorizontalAlignment="Left" Margin="228,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="e_q1" Content="" HorizontalAlignment="Left" Margin="273,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="e_q2" Content="" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="e_q3" Content="" HorizontalAlignment="Left" Margin="363,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="e_q4" Content="" HorizontalAlignment="Left" Margin="408,47,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="english" Content="Englisch" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="e_lk" Content="" HorizontalAlignment="Left" Margin="138,47,0,0" VerticalAlignment="Top" Checked="e_lk_Checked" Unchecked="e_lk_Unchecked" />
+                        <CheckBox x:Name="e_e1" Content="" HorizontalAlignment="Left" Margin="183,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="e_e2" Content="" HorizontalAlignment="Left" Margin="228,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="e_q1" Content="" HorizontalAlignment="Left" Margin="273,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="e_q2" Content="" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="e_q3" Content="" HorizontalAlignment="Left" Margin="363,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="e_q4" Content="" HorizontalAlignment="Left" Margin="408,47,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="france" Content="Französisch" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="f_lk" Content="" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Checked="f_lk_Checked" Unchecked="f_lk_Unchecked"/>
-                    <CheckBox x:Name="f_e1" Content="" HorizontalAlignment="Left" Margin="183,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="f_e2" Content="" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="f_q1" Content="" HorizontalAlignment="Left" Margin="273,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="f_q2" Content="" HorizontalAlignment="Left" Margin="318,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="f_q3" Content="" HorizontalAlignment="Left" Margin="363,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="f_q4" Content="" HorizontalAlignment="Left" Margin="408,78,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="france" Content="Französisch" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="f_lk" Content="" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Checked="f_lk_Checked" Unchecked="f_lk_Unchecked"/>
+                        <CheckBox x:Name="f_e1" Content="" HorizontalAlignment="Left" Margin="183,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="f_e2" Content="" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="f_q1" Content="" HorizontalAlignment="Left" Margin="273,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="f_q2" Content="" HorizontalAlignment="Left" Margin="318,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="f_q3" Content="" HorizontalAlignment="Left" Margin="363,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="f_q4" Content="" HorizontalAlignment="Left" Margin="408,78,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="italian" Content="Italienisch" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="it_lk" Content="" HorizontalAlignment="Left" Margin="138,109,0,0" VerticalAlignment="Top" Checked="it_lk_Checked" Unchecked="it_lk_Unchecked"/>
-                    <CheckBox x:Name ="it_e1" Content="" HorizontalAlignment="Left" Margin="183,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="it_e2" Content="" HorizontalAlignment="Left" Margin="228,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="it_q1" Content="" HorizontalAlignment="Left" Margin="273,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="it_q2" Content="" HorizontalAlignment="Left" Margin="318,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="it_q3" Content="" HorizontalAlignment="Left" Margin="363,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="it_q4" Content="" HorizontalAlignment="Left" Margin="408,109,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="italian" Content="Italienisch" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="it_lk" Content="" HorizontalAlignment="Left" Margin="138,109,0,0" VerticalAlignment="Top" Checked="it_lk_Checked" Unchecked="it_lk_Unchecked"/>
+                        <CheckBox x:Name ="it_e1" Content="" HorizontalAlignment="Left" Margin="183,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="it_e2" Content="" HorizontalAlignment="Left" Margin="228,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="it_q1" Content="" HorizontalAlignment="Left" Margin="273,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="it_q2" Content="" HorizontalAlignment="Left" Margin="318,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="it_q3" Content="" HorizontalAlignment="Left" Margin="363,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="it_q4" Content="" HorizontalAlignment="Left" Margin="408,109,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="spanish" Content="Spanisch" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="sp_lk" Content="" HorizontalAlignment="Left" Margin="138,140,0,0" VerticalAlignment="Top" Checked="sp_lk_Checked" Unchecked="sp_lk_Unchecked"/>
-                    <CheckBox x:Name ="sp_e1" Content="" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="sp_e2" Content="" HorizontalAlignment="Left" Margin="228,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="sp_q1" Content="" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="sp_q2" Content="" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="sp_q3" Content="" HorizontalAlignment="Left" Margin="363,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="sp_q4" Content="" HorizontalAlignment="Left" Margin="408,140,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="spanish" Content="Spanisch" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="sp_lk" Content="" HorizontalAlignment="Left" Margin="138,140,0,0" VerticalAlignment="Top" Checked="sp_lk_Checked" Unchecked="sp_lk_Unchecked"/>
+                        <CheckBox x:Name ="sp_e1" Content="" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="sp_e2" Content="" HorizontalAlignment="Left" Margin="228,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="sp_q1" Content="" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="sp_q2" Content="" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="sp_q3" Content="" HorizontalAlignment="Left" Margin="363,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="sp_q4" Content="" HorizontalAlignment="Left" Margin="408,140,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="russian" Content="Russisch" HorizontalAlignment="Left" Margin="0,165,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="ru_lk" Content="" HorizontalAlignment="Left" Margin="138,171,0,0" VerticalAlignment="Top" Checked="ru_lk_Checked" Unchecked="ru_lk_Unchecked"/>
-                    <CheckBox x:Name ="ru_e1" Content="" HorizontalAlignment="Left" Margin="183,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ru_e2" Content="" HorizontalAlignment="Left" Margin="228,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ru_q1" Content="" HorizontalAlignment="Left" Margin="273,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ru_q2" Content="" HorizontalAlignment="Left" Margin="318,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ru_q3" Content="" HorizontalAlignment="Left" Margin="363,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ru_q4" Content="" HorizontalAlignment="Left" Margin="408,171,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="russian" Content="Russisch" HorizontalAlignment="Left" Margin="0,165,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="ru_lk" Content="" HorizontalAlignment="Left" Margin="138,171,0,0" VerticalAlignment="Top" Checked="ru_lk_Checked" Unchecked="ru_lk_Unchecked"/>
+                        <CheckBox x:Name ="ru_e1" Content="" HorizontalAlignment="Left" Margin="183,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ru_e2" Content="" HorizontalAlignment="Left" Margin="228,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ru_q1" Content="" HorizontalAlignment="Left" Margin="273,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ru_q2" Content="" HorizontalAlignment="Left" Margin="318,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ru_q3" Content="" HorizontalAlignment="Left" Margin="363,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ru_q4" Content="" HorizontalAlignment="Left" Margin="408,171,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="greek" Content="Griechisch" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="gr_lk" Content="" HorizontalAlignment="Left" Margin="138,202,0,0" VerticalAlignment="Top" Checked="gr_lk_Checked" Unchecked="gr_lk_Unchecked"/>
-                    <CheckBox x:Name ="gr_e1" Content="" HorizontalAlignment="Left" Margin="183,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="gr_e2" Content="" HorizontalAlignment="Left" Margin="228,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="gr_q1" Content="" HorizontalAlignment="Left" Margin="273,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="gr_q2" Content="" HorizontalAlignment="Left" Margin="318,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="gr_q3" Content="" HorizontalAlignment="Left" Margin="363,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="gr_q4" Content="" HorizontalAlignment="Left" Margin="408,202,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="greek" Content="Griechisch" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="gr_lk" Content="" HorizontalAlignment="Left" Margin="138,202,0,0" VerticalAlignment="Top" Checked="gr_lk_Checked" Unchecked="gr_lk_Unchecked"/>
+                        <CheckBox x:Name ="gr_e1" Content="" HorizontalAlignment="Left" Margin="183,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="gr_e2" Content="" HorizontalAlignment="Left" Margin="228,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="gr_q1" Content="" HorizontalAlignment="Left" Margin="273,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="gr_q2" Content="" HorizontalAlignment="Left" Margin="318,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="gr_q3" Content="" HorizontalAlignment="Left" Margin="363,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="gr_q4" Content="" HorizontalAlignment="Left" Margin="408,202,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="latin" Content="Latein" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="l_lk" Content="" HorizontalAlignment="Left" Margin="138,233,0,0" VerticalAlignment="Top" Checked="l_lk_Checked" Unchecked="l_lk_Unchecked"/>
-                    <CheckBox x:Name ="l_e1" Content="" HorizontalAlignment="Left" Margin="183,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="l_e2" Content="" HorizontalAlignment="Left" Margin="228,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="l_q1" Content="" HorizontalAlignment="Left" Margin="273,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="l_q2" Content="" HorizontalAlignment="Left" Margin="318,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="l_q3" Content="" HorizontalAlignment="Left" Margin="363,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="l_q4" Content="" HorizontalAlignment="Left" Margin="408,233,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="latin" Content="Latein" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="l_lk" Content="" HorizontalAlignment="Left" Margin="138,233,0,0" VerticalAlignment="Top" Checked="l_lk_Checked" Unchecked="l_lk_Unchecked"/>
+                        <CheckBox x:Name ="l_e1" Content="" HorizontalAlignment="Left" Margin="183,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="l_e2" Content="" HorizontalAlignment="Left" Margin="228,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="l_q1" Content="" HorizontalAlignment="Left" Margin="273,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="l_q2" Content="" HorizontalAlignment="Left" Margin="318,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="l_q3" Content="" HorizontalAlignment="Left" Margin="363,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="l_q4" Content="" HorizontalAlignment="Left" Margin="408,233,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="music" Content="Musik" HorizontalAlignment="Left" Margin="0,258,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="mu_lk" Content="" HorizontalAlignment="Left" Margin="138,264,0,0" VerticalAlignment="Top" Checked="mu_lk_Checked" Unchecked="mu_lk_Unchecked"/>
-                    <CheckBox x:Name ="mu_e1" Content="" HorizontalAlignment="Left" Margin="183,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="mu_e2" Content="" HorizontalAlignment="Left" Margin="228,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="mu_q1" Content="" HorizontalAlignment="Left" Margin="273,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="mu_q2" Content="" HorizontalAlignment="Left" Margin="318,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="mu_q3" Content="" HorizontalAlignment="Left" Margin="363,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="mu_q4" Content="" HorizontalAlignment="Left" Margin="408,264,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="music" Content="Musik" HorizontalAlignment="Left" Margin="0,258,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="mu_lk" Content="" HorizontalAlignment="Left" Margin="138,264,0,0" VerticalAlignment="Top" Checked="mu_lk_Checked" Unchecked="mu_lk_Unchecked"/>
+                        <CheckBox x:Name ="mu_e1" Content="" HorizontalAlignment="Left" Margin="183,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="mu_e2" Content="" HorizontalAlignment="Left" Margin="228,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="mu_q1" Content="" HorizontalAlignment="Left" Margin="273,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="mu_q2" Content="" HorizontalAlignment="Left" Margin="318,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="mu_q3" Content="" HorizontalAlignment="Left" Margin="363,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="mu_q4" Content="" HorizontalAlignment="Left" Margin="408,264,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="art" Content="Kunst" HorizontalAlignment="Left" Margin="0,289,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="ku_lk" Content="" HorizontalAlignment="Left" Margin="138,295,0,0" VerticalAlignment="Top" Checked="ku_lk_Checked" Unchecked="ku_lk_Unchecked"/>
-                    <CheckBox x:Name ="ku_e1" Content="" HorizontalAlignment="Left" Margin="183,295,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ku_e2" Content="" HorizontalAlignment="Left" Margin="228,295,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ku_q1" Content="" HorizontalAlignment="Left" Margin="273,295,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ku_q2" Content="" HorizontalAlignment="Left" Margin="318,295,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ku_q3" Content="" HorizontalAlignment="Left" Margin="363,295,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ku_q4" Content="" HorizontalAlignment="Left" Margin="408,295,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="art" Content="Kunst" HorizontalAlignment="Left" Margin="0,289,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="ku_lk" Content="" HorizontalAlignment="Left" Margin="138,295,0,0" VerticalAlignment="Top" Checked="ku_lk_Checked" Unchecked="ku_lk_Unchecked"/>
+                        <CheckBox x:Name ="ku_e1" Content="" HorizontalAlignment="Left" Margin="183,295,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ku_e2" Content="" HorizontalAlignment="Left" Margin="228,295,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ku_q1" Content="" HorizontalAlignment="Left" Margin="273,295,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ku_q2" Content="" HorizontalAlignment="Left" Margin="318,295,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ku_q3" Content="" HorizontalAlignment="Left" Margin="363,295,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ku_q4" Content="" HorizontalAlignment="Left" Margin="408,295,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="theater" Content="Darstellendes Spiel" HorizontalAlignment="Left" Margin="0,320,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="ds_e1" Content="" HorizontalAlignment="Left" Margin="183,326,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ds_e2" Content="" HorizontalAlignment="Left" Margin="228,326,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ds_q1" Content="" HorizontalAlignment="Left" Margin="273,326,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ds_q2" Content="" HorizontalAlignment="Left" Margin="318,326,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ds_q3" Content="" HorizontalAlignment="Left" Margin="363,326,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ds_q4" Content="" HorizontalAlignment="Left" Margin="408,326,0,0" VerticalAlignment="Top" />
-                </Grid>
-            </GroupBox>
+                        <Label x:Name="theater" Content="Darstellendes Spiel" HorizontalAlignment="Left" Margin="0,320,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="ds_e1" Content="" HorizontalAlignment="Left" Margin="183,326,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ds_e2" Content="" HorizontalAlignment="Left" Margin="228,326,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ds_q1" Content="" HorizontalAlignment="Left" Margin="273,326,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ds_q2" Content="" HorizontalAlignment="Left" Margin="318,326,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ds_q3" Content="" HorizontalAlignment="Left" Margin="363,326,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ds_q4" Content="" HorizontalAlignment="Left" Margin="408,326,0,0" VerticalAlignment="Top" />
+                    </Grid>
+                </GroupBox>
 
-            <GroupBox x:Name="fb2" Header="Fachbereich II" HorizontalAlignment="Left" Height="308" Margin="10,448,0,0" VerticalAlignment="Top" Width="457">
-                <Grid>
-                    <Label x:Name="history" Content="Geschichte" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="g_lk" Content="" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="g_e1" Content="" HorizontalAlignment="Left" Margin="183,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="g_e2" Content="" HorizontalAlignment="Left" Margin="228,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="g_q1" Content="" HorizontalAlignment="Left" Margin="273,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="g_q2" Content="" HorizontalAlignment="Left" Margin="318,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="g_q3" Content="" HorizontalAlignment="Left" Margin="363,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="g_q4" Content="" HorizontalAlignment="Left" Margin="408,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <GroupBox x:Name="fb2" Header="Fachbereich II" HorizontalAlignment="Left" Height="308" Margin="10,403,0,0" VerticalAlignment="Top" Width="457">
+                    <Grid>
+                        <Label x:Name="history" Content="Geschichte" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="g_lk" Content="" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="g_e1" Content="" HorizontalAlignment="Left" Margin="183,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="g_e2" Content="" HorizontalAlignment="Left" Margin="228,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="g_q1" Content="" HorizontalAlignment="Left" Margin="273,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="g_q2" Content="" HorizontalAlignment="Left" Margin="318,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="g_q3" Content="" HorizontalAlignment="Left" Margin="363,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="g_q4" Content="" HorizontalAlignment="Left" Margin="408,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
 
-                    <Label x:Name="polec" Content="Politik und Wirtschaft" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="pw_lk" Content="" HorizontalAlignment="Left" Margin="138,47,0,0" VerticalAlignment="Top" Checked="pw_lk_Checked"  Unchecked="pw_lk_Unchecked"/>
-                    <CheckBox x:Name="pw_e1" Content="" HorizontalAlignment="Left" Margin="183,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="pw_e2" Content="" HorizontalAlignment="Left" Margin="228,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="pw_q1" Content="" HorizontalAlignment="Left" Margin="273,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="pw_q2" Content="" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="pw_q3" Content="" HorizontalAlignment="Left" Margin="363,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="pw_q4" Content="" HorizontalAlignment="Left" Margin="408,47,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="polec" Content="Politik und Wirtschaft" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="pw_lk" Content="" HorizontalAlignment="Left" Margin="138,47,0,0" VerticalAlignment="Top" Checked="pw_lk_Checked"  Unchecked="pw_lk_Unchecked"/>
+                        <CheckBox x:Name="pw_e1" Content="" HorizontalAlignment="Left" Margin="183,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="pw_e2" Content="" HorizontalAlignment="Left" Margin="228,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="pw_q1" Content="" HorizontalAlignment="Left" Margin="273,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="pw_q2" Content="" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="pw_q3" Content="" HorizontalAlignment="Left" Margin="363,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="pw_q4" Content="" HorizontalAlignment="Left" Margin="408,47,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="economics" Content="Wirtschaftswissens." HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="ec_lk" Content="" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Checked="ec_lk_Checked" Unchecked="ec_lk_Unchecked" />
-                    <CheckBox x:Name="ec_e1" Content="" HorizontalAlignment="Left" Margin="183,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="ec_e2" Content="" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="ec_q1" Content="" HorizontalAlignment="Left" Margin="273,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="ec_q2" Content="" HorizontalAlignment="Left" Margin="318,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="ec_q3" Content="" HorizontalAlignment="Left" Margin="363,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="ec_q4" Content="" HorizontalAlignment="Left" Margin="408,78,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="economics" Content="Wirtschaftswissens." HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="ec_lk" Content="" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Checked="ec_lk_Checked" Unchecked="ec_lk_Unchecked" />
+                        <CheckBox x:Name="ec_e1" Content="" HorizontalAlignment="Left" Margin="183,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="ec_e2" Content="" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="ec_q1" Content="" HorizontalAlignment="Left" Margin="273,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="ec_q2" Content="" HorizontalAlignment="Left" Margin="318,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="ec_q3" Content="" HorizontalAlignment="Left" Margin="363,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="ec_q4" Content="" HorizontalAlignment="Left" Margin="408,78,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="law" Content="Rechtskunde" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="law_e1" Content="" HorizontalAlignment="Left" Margin="183,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="law_e2" Content="" HorizontalAlignment="Left" Margin="228,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="law_q1" Content="" HorizontalAlignment="Left" Margin="273,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="law_q2" Content="" HorizontalAlignment="Left" Margin="318,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="law_q3" Content="" HorizontalAlignment="Left" Margin="363,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="law_q4" Content="" HorizontalAlignment="Left" Margin="408,109,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="law" Content="Rechtskunde" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="law_e1" Content="" HorizontalAlignment="Left" Margin="183,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="law_e2" Content="" HorizontalAlignment="Left" Margin="228,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="law_q1" Content="" HorizontalAlignment="Left" Margin="273,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="law_q2" Content="" HorizontalAlignment="Left" Margin="318,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="law_q3" Content="" HorizontalAlignment="Left" Margin="363,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="law_q4" Content="" HorizontalAlignment="Left" Margin="408,109,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="philosophy" Content="Philosophie" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="phil_e1" Content="" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="phil_e2" Content="" HorizontalAlignment="Left" Margin="228,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="phil_q1" Content="" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="phil_q2" Content="" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="phil_q3" Content="" HorizontalAlignment="Left" Margin="363,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="phil_q4" Content="" HorizontalAlignment="Left" Margin="408,140,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="philosophy" Content="Philosophie" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="phil_e1" Content="" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="phil_e2" Content="" HorizontalAlignment="Left" Margin="228,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="phil_q1" Content="" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="phil_q2" Content="" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="phil_q3" Content="" HorizontalAlignment="Left" Margin="363,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="phil_q4" Content="" HorizontalAlignment="Left" Margin="408,140,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="geography" Content="Erdkunde" HorizontalAlignment="Left" Margin="0,165,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="ek_lk" Content="" HorizontalAlignment="Left" Margin="138,171,0,0" VerticalAlignment="Top" Checked="ek_lk_Checked" Unchecked="ek_lk_Unchecked"/>
-                    <CheckBox x:Name ="ek_e1" Content="" HorizontalAlignment="Left" Margin="183,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ek_e2" Content="" HorizontalAlignment="Left" Margin="228,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ek_q1" Content="" HorizontalAlignment="Left" Margin="273,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ek_q2" Content="" HorizontalAlignment="Left" Margin="318,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ek_q3" Content="" HorizontalAlignment="Left" Margin="363,171,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="ek_q4" Content="" HorizontalAlignment="Left" Margin="408,171,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="geography" Content="Erdkunde" HorizontalAlignment="Left" Margin="0,165,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="ek_lk" Content="" HorizontalAlignment="Left" Margin="138,171,0,0" VerticalAlignment="Top" Checked="ek_lk_Checked" Unchecked="ek_lk_Unchecked"/>
+                        <CheckBox x:Name ="ek_e1" Content="" HorizontalAlignment="Left" Margin="183,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ek_e2" Content="" HorizontalAlignment="Left" Margin="228,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ek_q1" Content="" HorizontalAlignment="Left" Margin="273,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ek_q2" Content="" HorizontalAlignment="Left" Margin="318,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ek_q3" Content="" HorizontalAlignment="Left" Margin="363,171,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="ek_q4" Content="" HorizontalAlignment="Left" Margin="408,171,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="evrel" Content="Ev. Religion" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="evrel_lk" Content="" HorizontalAlignment="Left" Margin="138,202,0,0" VerticalAlignment="Top" Checked="evrel_lk_Checked" Unchecked="evrel_lk_Unchecked"/>
-                    <CheckBox x:Name ="evrel_e1" Content="" HorizontalAlignment="Left" Margin="183,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="evrel_e2" Content="" HorizontalAlignment="Left" Margin="228,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="evrel_q1" Content="" HorizontalAlignment="Left" Margin="273,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="evrel_q2" Content="" HorizontalAlignment="Left" Margin="318,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="evrel_q3" Content="" HorizontalAlignment="Left" Margin="363,202,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="evrel_q4" Content="" HorizontalAlignment="Left" Margin="408,202,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="evrel" Content="Ev. Religion" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="evrel_lk" Content="" HorizontalAlignment="Left" Margin="138,202,0,0" VerticalAlignment="Top" Checked="evrel_lk_Checked" Unchecked="evrel_lk_Unchecked"/>
+                        <CheckBox x:Name ="evrel_e1" Content="" HorizontalAlignment="Left" Margin="183,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="evrel_e2" Content="" HorizontalAlignment="Left" Margin="228,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="evrel_q1" Content="" HorizontalAlignment="Left" Margin="273,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="evrel_q2" Content="" HorizontalAlignment="Left" Margin="318,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="evrel_q3" Content="" HorizontalAlignment="Left" Margin="363,202,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="evrel_q4" Content="" HorizontalAlignment="Left" Margin="408,202,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="kathrel" Content="Kath. Religion" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="kathrel_lk" Content="" HorizontalAlignment="Left" Margin="138,233,0,0" VerticalAlignment="Top" Checked="kathrel_lk_Checked" Unchecked="kathrel_lk_Unchecked"/>
-                    <CheckBox x:Name ="kathrel_e1" Content="" HorizontalAlignment="Left" Margin="183,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="kathrel_e2" Content="" HorizontalAlignment="Left" Margin="228,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="kathrel_q1" Content="" HorizontalAlignment="Left" Margin="273,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="kathrel_q2" Content="" HorizontalAlignment="Left" Margin="318,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="kathrel_q3" Content="" HorizontalAlignment="Left" Margin="363,233,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="kathrel_q4" Content="" HorizontalAlignment="Left" Margin="408,233,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="kathrel" Content="Kath. Religion" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="kathrel_lk" Content="" HorizontalAlignment="Left" Margin="138,233,0,0" VerticalAlignment="Top" Checked="kathrel_lk_Checked" Unchecked="kathrel_lk_Unchecked"/>
+                        <CheckBox x:Name ="kathrel_e1" Content="" HorizontalAlignment="Left" Margin="183,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="kathrel_e2" Content="" HorizontalAlignment="Left" Margin="228,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="kathrel_q1" Content="" HorizontalAlignment="Left" Margin="273,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="kathrel_q2" Content="" HorizontalAlignment="Left" Margin="318,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="kathrel_q3" Content="" HorizontalAlignment="Left" Margin="363,233,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="kathrel_q4" Content="" HorizontalAlignment="Left" Margin="408,233,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="ethics" Content="Ethik" HorizontalAlignment="Left" Margin="0,258,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name ="eth_e1" Content="" HorizontalAlignment="Left" Margin="183,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="eth_e2" Content="" HorizontalAlignment="Left" Margin="228,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="eth_q1" Content="" HorizontalAlignment="Left" Margin="273,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="eth_q2" Content="" HorizontalAlignment="Left" Margin="318,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="eth_q3" Content="" HorizontalAlignment="Left" Margin="363,264,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="eth_q4" Content="" HorizontalAlignment="Left" Margin="408,264,0,0" VerticalAlignment="Top" />
-                </Grid>
-            </GroupBox>
+                        <Label x:Name="ethics" Content="Ethik" HorizontalAlignment="Left" Margin="0,258,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name ="eth_e1" Content="" HorizontalAlignment="Left" Margin="183,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="eth_e2" Content="" HorizontalAlignment="Left" Margin="228,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="eth_q1" Content="" HorizontalAlignment="Left" Margin="273,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="eth_q2" Content="" HorizontalAlignment="Left" Margin="318,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="eth_q3" Content="" HorizontalAlignment="Left" Margin="363,264,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="eth_q4" Content="" HorizontalAlignment="Left" Margin="408,264,0,0" VerticalAlignment="Top" />
+                    </Grid>
+                </GroupBox>
 
-            <GroupBox x:Name="fb3" Header="Fachbereich III" HorizontalAlignment="Left" Height="184" Margin="10,788,0,0" VerticalAlignment="Top" Width="457">
-                <Grid>
-                    <Label x:Name="maths" Content="Mathematik" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="m_lk" Content="" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="m_e1" Content="" HorizontalAlignment="Left" Margin="183,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="m_e2" Content="" HorizontalAlignment="Left" Margin="228,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="m_q1" Content="" HorizontalAlignment="Left" Margin="273,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="m_q2" Content="" HorizontalAlignment="Left" Margin="318,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="m_q3" Content="" HorizontalAlignment="Left" Margin="363,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="m_q4" Content="" HorizontalAlignment="Left" Margin="408,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <GroupBox x:Name="fb3" Header="Fachbereich III" HorizontalAlignment="Left" Height="184" Margin="10,743,0,0" VerticalAlignment="Top" Width="457">
+                    <Grid>
+                        <Label x:Name="maths" Content="Mathematik" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="m_lk" Content="" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="m_e1" Content="" HorizontalAlignment="Left" Margin="183,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="m_e2" Content="" HorizontalAlignment="Left" Margin="228,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="m_q1" Content="" HorizontalAlignment="Left" Margin="273,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="m_q2" Content="" HorizontalAlignment="Left" Margin="318,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="m_q3" Content="" HorizontalAlignment="Left" Margin="363,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="m_q4" Content="" HorizontalAlignment="Left" Margin="408,16,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
 
-                    <Label x:Name="biology" Content="Biologie" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="b_lk" Content="" HorizontalAlignment="Left" Margin="138,47,0,0" VerticalAlignment="Top" Checked="b_lk_Checked" Unchecked="b_lk_Unchecked" />
-                    <CheckBox x:Name="b_e1" Content="" HorizontalAlignment="Left" Margin="183,47,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="b_e2" Content="" HorizontalAlignment="Left" Margin="228,47,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="b_q1" Content="" HorizontalAlignment="Left" Margin="273,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="b_q2" Content="" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="b_q3" Content="" HorizontalAlignment="Left" Margin="363,47,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="b_q4" Content="" HorizontalAlignment="Left" Margin="408,47,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="biology" Content="Biologie" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="b_lk" Content="" HorizontalAlignment="Left" Margin="138,47,0,0" VerticalAlignment="Top" Checked="b_lk_Checked" Unchecked="b_lk_Unchecked" />
+                        <CheckBox x:Name="b_e1" Content="" HorizontalAlignment="Left" Margin="183,47,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="b_e2" Content="" HorizontalAlignment="Left" Margin="228,47,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="b_q1" Content="" HorizontalAlignment="Left" Margin="273,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="b_q2" Content="" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="b_q3" Content="" HorizontalAlignment="Left" Margin="363,47,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="b_q4" Content="" HorizontalAlignment="Left" Margin="408,47,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="chemics" Content="Chemie" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="c_lk" Content="" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Checked="c_lk_Checked" Unchecked="c_lk_Unchecked" />
-                    <CheckBox x:Name="c_e1" Content="" HorizontalAlignment="Left" Margin="183,78,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="c_e2" Content="" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name="c_q1" Content="" HorizontalAlignment="Left" Margin="273,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="c_q2" Content="" HorizontalAlignment="Left" Margin="318,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="c_q3" Content="" HorizontalAlignment="Left" Margin="363,78,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name="c_q4" Content="" HorizontalAlignment="Left" Margin="408,78,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="chemics" Content="Chemie" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="c_lk" Content="" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Checked="c_lk_Checked" Unchecked="c_lk_Unchecked" />
+                        <CheckBox x:Name="c_e1" Content="" HorizontalAlignment="Left" Margin="183,78,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="c_e2" Content="" HorizontalAlignment="Left" Margin="228,78,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name="c_q1" Content="" HorizontalAlignment="Left" Margin="273,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="c_q2" Content="" HorizontalAlignment="Left" Margin="318,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="c_q3" Content="" HorizontalAlignment="Left" Margin="363,78,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name="c_q4" Content="" HorizontalAlignment="Left" Margin="408,78,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="physics" Content="Physik" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="p_lk" Content="" HorizontalAlignment="Left" Margin="138,109,0,0" VerticalAlignment="Top" Checked="p_lk_Checked" Unchecked="p_lk_Unchecked" />
-                    <CheckBox x:Name ="p_e1" Content="" HorizontalAlignment="Left" Margin="183,109,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name ="p_e2" Content="" HorizontalAlignment="Left" Margin="228,109,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-                    <CheckBox x:Name ="p_q1" Content="" HorizontalAlignment="Left" Margin="273,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="p_q2" Content="" HorizontalAlignment="Left" Margin="318,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="p_q3" Content="" HorizontalAlignment="Left" Margin="363,109,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="p_q4" Content="" HorizontalAlignment="Left" Margin="408,109,0,0" VerticalAlignment="Top" />
+                        <Label x:Name="physics" Content="Physik" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="p_lk" Content="" HorizontalAlignment="Left" Margin="138,109,0,0" VerticalAlignment="Top" Checked="p_lk_Checked" Unchecked="p_lk_Unchecked" />
+                        <CheckBox x:Name ="p_e1" Content="" HorizontalAlignment="Left" Margin="183,109,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name ="p_e2" Content="" HorizontalAlignment="Left" Margin="228,109,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                        <CheckBox x:Name ="p_q1" Content="" HorizontalAlignment="Left" Margin="273,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="p_q2" Content="" HorizontalAlignment="Left" Margin="318,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="p_q3" Content="" HorizontalAlignment="Left" Margin="363,109,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="p_q4" Content="" HorizontalAlignment="Left" Margin="408,109,0,0" VerticalAlignment="Top" />
 
-                    <Label x:Name="informatics" Content="Informatik" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="inf_lk" Content="" HorizontalAlignment="Left" Margin="138,140,0,0" VerticalAlignment="Top" Checked="inf_lk_Checked" Unchecked="inf_lk_Unchecked" />
-                    <CheckBox x:Name ="inf_e1" Content="" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="inf_e2" Content="" HorizontalAlignment="Left" Margin="228,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="inf_q1" Content="" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="inf_q2" Content="" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="inf_q3" Content="" HorizontalAlignment="Left" Margin="363,140,0,0" VerticalAlignment="Top" />
-                    <CheckBox x:Name ="inf_q4" Content="" HorizontalAlignment="Left" Margin="408,140,0,0" VerticalAlignment="Top" />
-                </Grid>
-            </GroupBox>
+                        <Label x:Name="informatics" Content="Informatik" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="inf_lk" Content="" HorizontalAlignment="Left" Margin="138,140,0,0" VerticalAlignment="Top" Checked="inf_lk_Checked" Unchecked="inf_lk_Unchecked" />
+                        <CheckBox x:Name ="inf_e1" Content="" HorizontalAlignment="Left" Margin="183,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="inf_e2" Content="" HorizontalAlignment="Left" Margin="228,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="inf_q1" Content="" HorizontalAlignment="Left" Margin="273,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="inf_q2" Content="" HorizontalAlignment="Left" Margin="318,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="inf_q3" Content="" HorizontalAlignment="Left" Margin="363,140,0,0" VerticalAlignment="Top" />
+                        <CheckBox x:Name ="inf_q4" Content="" HorizontalAlignment="Left" Margin="408,140,0,0" VerticalAlignment="Top" />
+                    </Grid>
+                </GroupBox>
 
-            <Label x:Name="pe" Content="Sport" HorizontalAlignment="Left" Margin="16,1000,0,0" VerticalAlignment="Top"/>
-            <CheckBox x:Name ="pe_lk" Content="" HorizontalAlignment="Left" Margin="154,1006,0,0" VerticalAlignment="Top"/>
-            <CheckBox x:Name ="pe_e1" Content="" HorizontalAlignment="Left" Margin="200,1006,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-            <CheckBox x:Name ="pe_e2" Content="" HorizontalAlignment="Left" Margin="244,1006,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-            <CheckBox x:Name ="pe_q1" Content="" HorizontalAlignment="Left" Margin="288,1006,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-            <CheckBox x:Name ="pe_q2" Content="" HorizontalAlignment="Left" Margin="335,1006,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-            <CheckBox x:Name ="pe_q3" Content="" HorizontalAlignment="Left" Margin="379,1006,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-            <CheckBox x:Name ="pe_q4" Content="" HorizontalAlignment="Left" Margin="424,1006,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
-            <CheckBox x:Name="pe_3std" Content="dreistündiger Sportkurs" HorizontalAlignment="Left" Margin="154,1058,0,0" VerticalAlignment="Top"/>
-          
-            <Button x:Name="button" Content="Weiter" HorizontalAlignment="Left" Margin="371,1055,0,20" VerticalAlignment="Top" Width="75" Height="20" Click="button_Click"/>
-        </Grid>
-    </ScrollViewer>
+                <Label x:Name="pe" Content="Sport" HorizontalAlignment="Left" Margin="16,955,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name ="pe_lk" Content="" HorizontalAlignment="Left" Margin="154,961,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name ="pe_e1" Content="" HorizontalAlignment="Left" Margin="200,961,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <CheckBox x:Name ="pe_e2" Content="" HorizontalAlignment="Left" Margin="244,961,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <CheckBox x:Name ="pe_q1" Content="" HorizontalAlignment="Left" Margin="288,961,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <CheckBox x:Name ="pe_q2" Content="" HorizontalAlignment="Left" Margin="335,961,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <CheckBox x:Name ="pe_q3" Content="" HorizontalAlignment="Left" Margin="379,961,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <CheckBox x:Name ="pe_q4" Content="" HorizontalAlignment="Left" Margin="424,961,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+                <CheckBox x:Name="pe_3std" Content="dreistündiger Sportkurs" HorizontalAlignment="Left" Margin="154,1003,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </ScrollViewer>
+
+        <Button x:Name="button" Content="Weiter" HorizontalAlignment="Left" Margin="391,570,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="button_Click"/>
+    </Grid>
+    
 </Window>
