@@ -5,47 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeControl"
         mc:Ignorable="d"
-        Title="GradeControl" Height="460" Width="1100" ResizeMode="CanMinimize">
+        Title="GradeControl" Height="460" Width="1100" ResizeMode="CanMinimize" Closing="Window_Closing">
     <Grid>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="1094">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="820*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="1094" Grid.ColumnSpan="3" Margin="0,0,-0.4,0">
 
             <MenuItem Header="_Einstellungen">
                 <MenuItem Header="_Kursbelegung" Click="OpenTakenCourses"/>
-                <MenuItem Header="_Prüfungswahl" Click="OpenTakenCourses"/>
+                <MenuItem Header="_Prüfungswahl" Click="OpenChosenExams"/>
             </MenuItem>
 
             <MenuItem Header="_Hilfe">
-                <MenuItem Header="_Über GradeControl"/>
+                <MenuItem Header="_Informationen zum Programm" Click="OpenHelp"/>
+                <MenuItem Header="_Über GradeControl" Click="OpenAbout"/>
             </MenuItem>
         </Menu>
 
-        <Label x:Name="labelS" Content="Schülerauswahl" HorizontalAlignment="Left" Margin="21,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ListView x:Name="studentSelection" HorizontalAlignment="Left" Height="301" Margin="21,66,0,0" VerticalAlignment="Top" Width="156">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="add_Student" Content="Neu" HorizontalAlignment="Left" Margin="21,385,0,0" VerticalAlignment="Top" Height="25" Width="65" Click="add_Student_Click"/>
-        <Button x:Name="delete_Student" Content="Löschen" HorizontalAlignment="Left" Margin="112,385,0,0" VerticalAlignment="Top" Height="25" Width="65" Click="delete_Student_Click"/>
+        <Label x:Name="labelS" Content="Schülerauswahl" HorizontalAlignment="Left" Margin="21,27,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="studentSelection" HorizontalAlignment="Left" Height="301" Margin="21,66,0,0" VerticalAlignment="Top" Width="156" SelectionChanged="studentSelection_SelectionChanged" MouseDoubleClick="studentSelection_MouseDoubleClick" Grid.ColumnSpan="2"/>
+            <Button x:Name="add_Student" Content="Neu" HorizontalAlignment="Left" Margin="21,385,0,0" VerticalAlignment="Top" Height="25" Width="65" Click="add_Student_Click"/>
+        <Button x:Name="delete_Student" Content="Löschen" HorizontalAlignment="Left" Margin="112,385,0,0" VerticalAlignment="Top" Height="25" Width="65" Click="delete_Student_Click" Grid.ColumnSpan="2"/>
 
-        <Label x:Name="labelBC" Content="Grundkurse" HorizontalAlignment="Left" Margin="209,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <DataGrid x:Name="dataGridBC" HorizontalAlignment="Left" Height="199" Margin="209,66,0,0" VerticalAlignment="Top" Width="290" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*">
+        <Label x:Name="labelBC" Content="Grundkurse" HorizontalAlignment="Left" Margin="61.8,27,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="dataGridBC" HorizontalAlignment="Left" Height="199" Margin="61.8,66,0,0" VerticalAlignment="Top" Width="290" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*" Grid.Column="1" Grid.ColumnSpan="2">
         </DataGrid>
 
-        <Label x:Name="labelSC" Content="Leistungskurse" HorizontalAlignment="Left" Margin="539,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <DataGrid x:Name="dataGridSC" HorizontalAlignment="Left" Height="199" Margin="539,66,0,0" VerticalAlignment="Top" Width="290" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*">
+        <Label x:Name="labelSC" Content="Leistungskurse" HorizontalAlignment="Left" Margin="265.3,27,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="2"/>
+        <DataGrid x:Name="dataGridSC" HorizontalAlignment="Left" Height="199" Margin="265.3,66,0,0" VerticalAlignment="Top" Width="290" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*" Grid.Column="2">
         </DataGrid>
 
-        <Label x:Name="labelA" Content="Abiturprüfungen" HorizontalAlignment="Left" Margin="869,27,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <DataGrid x:Name="dataGridA" HorizontalAlignment="Left" Height="199" Margin="869,66,0,0" VerticalAlignment="Top" Width="200" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*">
+        <Label x:Name="labelA" Content="Abiturprüfungen" HorizontalAlignment="Left" Margin="595.3,27,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="2"/>
+        <DataGrid x:Name="dataGridA" HorizontalAlignment="Left" Height="199" Margin="595.3,66,0,0" VerticalAlignment="Top" Width="200" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*" Grid.Column="2">
         </DataGrid>
 
-        <Label x:Name="labelBCTot" Content="Σ   .bctot. / 360 Pkt." HorizontalAlignment="Left" Margin="209,270,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="labelSCTot" Content="Σ   .sctot. / 240 Pkt." HorizontalAlignment="Left" Margin="539,270,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="labelATot" Content="Σ   .atot. / 300 Pkt." HorizontalAlignment="Left" Margin="869,270,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="labelGrade" Content="1,2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="969,348,0,0" VerticalAlignment="Top" Background="#FF17FF00" BorderBrush="Black" FontSize="32" BorderThickness="2" FontWeight="Bold" Width="100" Height="60"/>
-        <Label x:Name="labelTot" Content="Σ   .tot. / 900 Pkt." HorizontalAlignment="Left" Margin="646,351,0,0" VerticalAlignment="Top" FontSize="32"/>
+        <Label x:Name="labelBCTot" Content="Σ   0 / 360 Pkt." HorizontalAlignment="Left" Margin="61.8,270,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelSCTot" Content="Σ   0 / 240 Pkt." HorizontalAlignment="Left" Margin="265.3,270,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="2"/>
+        <Label x:Name="labelATot" Content="Σ   0 / 300 Pkt." HorizontalAlignment="Left" Margin="595.3,270,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="2"/>
+        <Label x:Name="labelGrade" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="695.3,348,0,0" VerticalAlignment="Top" Background="White" BorderBrush="Black" FontSize="32" BorderThickness="2" FontWeight="Bold" Width="100" Height="60" Grid.Column="2"/>
+        <Label x:Name="labelTot" Content="Σ   0 / 900 Pkt." HorizontalAlignment="Left" Margin="372.3,351,0,0" VerticalAlignment="Top" FontSize="32" Grid.Column="2"/>
     </Grid>
 </Window>

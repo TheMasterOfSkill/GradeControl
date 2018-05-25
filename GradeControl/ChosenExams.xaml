@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeControl"
         mc:Ignorable="d"
-        Title="Wahl der Prüfungsfächer im Abitur" Height="380" Width="300">
+        Title="Wahl der Prüfungsfächer" Height="380" Width="300" ResizeMode="CanMinimize">
     <Grid>
         <GroupBox x:Name="written" Header="Schriftliche Prüfungen" HorizontalAlignment="Left" Height="140" Margin="10,20,0,0" VerticalAlignment="Top" Width="274">
             <Grid>

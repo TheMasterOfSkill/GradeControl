@@ -25,13 +25,12 @@ namespace GradeControl
         public RelevantCourse[] DetermineRelevantCourses()
         {
             int remainingGks = 24;
-            RelevantCourse[] relevantCourses = new RelevantCourse[GkItems.Count];
 
-            string bestForeignLanguage = GetBestForeignLanguage();
             bool foreignLanguageAsLk = LkItems.Any(lkItem => IsForeignLanguage(lkItem.Fach));
+            string bestForeignLanguage = GetBestForeignLanguage(foreignLanguageAsLk);
 
-            string bestNW = GetBestNW();
             bool nwAsLk = LkItems.Any(lkItem => IsNW(lkItem.Fach));
+            string bestNW = GetBestNW(nwAsLk);
 
             QuarterCourse[] bestPwOrEc = GetBestPwOrEc();
             bool pwOrEcAsLk = LkItems.Any(lkItem => IsPwOrEc(lkItem.Fach));
@@ -39,9 +38,7 @@ namespace GradeControl
             QuarterCourse[] bestMuKuDs = GetBestMuKuDs();
             bool muKuDsAsLk = LkItems.Any(lkItem => IsMuKuDs(lkItem.Fach));
 
-            QuarterCourse[] bestSecondary = GetBestSecondary(bestForeignLanguage, bestNW);
-
-            QuarterCourse[] bestThird = GetBestThird(bestPwOrEc);
+            QuarterCourse[] bestSecondary = GetBestSecondary(bestForeignLanguage, foreignLanguageAsLk, bestNW, nwAsLk);
 
             remainingGks -= SetExamCoursesRelevant();
 
@@ -49,17 +46,10 @@ namespace GradeControl
             {
                 if(!quarterCourses[i].Relevant)
                 {
-                    if (quarterCourses[i].Name == "Deutsch" || quarterCourses[i].Name == "Mathematik")
+                    if (quarterCourses[i].Name == "Geschichte" && (quarterCourses[i].Semester == 3 || quarterCourses[i].Semester == 4))
                     {
                         quarterCourses[i].Relevant = true;
-                        if (!quarterCourses[i].Lk)
-                            remainingGks--;
-                    }
-                    else if (quarterCourses[i].Name == "Geschichte" && (quarterCourses[i].Semester == 3 || quarterCourses[i].Semester == 4))
-                    {
-                        quarterCourses[i].Relevant = true;
-                        if (!quarterCourses[i].Lk)
-                            remainingGks--;
+                        remainingGks--;
                     }
                     else if (quarterCourses[i].Name == bestForeignLanguage && !foreignLanguageAsLk)
                     {
@@ -82,11 +72,6 @@ namespace GradeControl
                         remainingGks--;
                     }
                     else if (quarterCourses[i] == bestSecondary[0] || quarterCourses[i] == bestSecondary[1])
-                    {
-                        quarterCourses[i].Relevant = true;
-                        remainingGks--;
-                    }
-                    else if (quarterCourses[i] == bestThird[0] || quarterCourses[i] == bestThird[1])
                     {
                         quarterCourses[i].Relevant = true;
                         remainingGks--;
@@ -198,9 +183,15 @@ namespace GradeControl
             return name == "Englisch" || name == "Französisch" || name == "Italienisch" || name == "Spanisch" || name == "Russisch" || name == "Griechisch" || name == "Latein";
         }
 
-        private string GetBestForeignLanguage()
+        private string GetBestForeignLanguage(bool foreignLanguageAsLk)
         {
-            List<CourseItem> foreignLanguages = GkItems.Where(gkItem => IsForeignLanguage(gkItem.Fach)).ToList();
+            List<CourseItem> foreignLanguages;
+
+            if (foreignLanguageAsLk)
+                foreignLanguages = LkItems.Where(lkItem => IsForeignLanguage(lkItem.Fach)).ToList();
+            else
+                foreignLanguages = GkItems.Where(gkItem => IsForeignLanguage(gkItem.Fach)).ToList();
+
             CourseItem bestOne = foreignLanguages.OrderByDescending(item => item.Q1 + item.Q2 + item.Q3 + item.Q4).First();
 
             return bestOne.Fach;
@@ -216,9 +207,15 @@ namespace GradeControl
             return name == "Biologie" || name == "Chemie" || name == "Physik" || name == "Informatik";
         }
 
-        private string GetBestNW()
+        private string GetBestNW(bool nwAsLk)
         {
-            List<CourseItem> nws = GkItems.Where(gkItem => IsNW(gkItem.Fach)).ToList();
+            List<CourseItem> nws;
+
+            if(nwAsLk)
+                nws = LkItems.Where(lkItem => IsNW(lkItem.Fach)).ToList();
+            else
+                nws = GkItems.Where(gkItem => IsNW(gkItem.Fach)).ToList();
+
             CourseItem bestOne = nws.OrderByDescending(item => item.Q1 + item.Q2 + item.Q3 + item.Q4).First();
 
             return bestOne.Fach;
@@ -232,8 +229,8 @@ namespace GradeControl
         private QuarterCourse[] GetBestPwOrEc()
         {
             QuarterCourse[] bestPwOrEc = new QuarterCourse[2];
-            List<QuarterCourse> pw = quarterCourses.Where(item => item.Name == "Politik und Wirtschaft" && !item.Lk).OrderByDescending(item => item.Grade).ToList();
-            List<QuarterCourse> ec = quarterCourses.Where(item => item.Name == "Wirtschaftswissens." && !item.Lk).OrderByDescending(item => item.Grade).ToList();
+            List<QuarterCourse> pw = quarterCourses.Where(item => item.Name == "Politik und Wirtschaft").OrderByDescending(item => item.Grade).ToList();
+            List<QuarterCourse> ec = quarterCourses.Where(item => item.Name == "Wirtschaftswissens.").OrderByDescending(item => item.Grade).ToList();
 
             if(pw.Count == 0)
             {
@@ -270,8 +267,8 @@ namespace GradeControl
         private QuarterCourse[] GetBestMuKuDs()
         {
             QuarterCourse[] bestMuKuDs = new QuarterCourse[2];
-            List<QuarterCourse> mu = quarterCourses.Where(item => item.Name == "Musik" && !item.Lk).OrderByDescending(item => item.Grade).ToList();
-            List<QuarterCourse> ku = quarterCourses.Where(item => item.Name == "Kunst" && !item.Lk).OrderByDescending(item => item.Grade).ToList();
+            List<QuarterCourse> mu = quarterCourses.Where(item => item.Name == "Musik").OrderByDescending(item => item.Grade).ToList();
+            List<QuarterCourse> ku = quarterCourses.Where(item => item.Name == "Kunst").OrderByDescending(item => item.Grade).ToList();
             List<QuarterCourse> ds = quarterCourses.Where(item => item.Name == "Darstellendes Spiel").OrderByDescending(item => item.Grade).ToList();
 
             if (mu.Count == 0)
@@ -374,44 +371,37 @@ namespace GradeControl
             return bestMuKuDs;
         }
 
-        private QuarterCourse[] GetBestSecondary(string bestForeignLanguage, string bestNW)
+        private QuarterCourse[] GetBestSecondary(string bestForeignLanguage, bool foreignLanguageAsLk, string bestNW, bool nwAsLk)
         {
             QuarterCourse[] bestSecondary = new QuarterCourse[2];
-            int highestSum = -1;
-            string bestSecondaryName = String.Empty;
-            IEnumerable<IGrouping<string, QuarterCourse>> possibleSecondaries = quarterCourses.Where(item => ((IsForeignLanguage(item.Name) && item.Name != bestForeignLanguage) || (IsNWOrInf(item.Name) && item.Name != bestNW)) && !item.Lk).GroupBy(item => item.Name);
 
-            foreach(IGrouping<string, QuarterCourse> possibleSecondary in possibleSecondaries)
+            if(!TwoNwOrFlAsLk())
             {
-                List<QuarterCourse> quarters = possibleSecondary.OrderByDescending(item => item.Grade).ToList();
-                if(quarters[0].Grade + quarters[1].Grade > highestSum)
-                {
-                    highestSum = quarters[0].Grade + quarters[1].Grade;
-                    bestSecondaryName = quarters[0].Name;
-                }
-            }
+                int highestSum = -1;
+                string bestSecondaryName = String.Empty;
+                IEnumerable<IGrouping<string, QuarterCourse>> possibleSecondaries = quarterCourses.Where(item => ((IsForeignLanguage(item.Name) && (foreignLanguageAsLk || item.Name != bestForeignLanguage)) || (IsNWOrInf(item.Name) && (nwAsLk || item.Name != bestNW))) && !item.Lk).GroupBy(item => item.Name);
 
-            List<QuarterCourse> secondaries = quarterCourses.Where(item => item.Name == bestSecondaryName).OrderByDescending(item => item.Grade).ToList();
-            bestSecondary[0] = secondaries[0];
-            bestSecondary[1] = secondaries[1];
+                foreach (IGrouping<string, QuarterCourse> possibleSecondary in possibleSecondaries)
+                {
+                    List<QuarterCourse> quarters = possibleSecondary.OrderByDescending(item => item.Grade).ToList();
+                    if (quarters[0].Grade + quarters[1].Grade > highestSum)
+                    {
+                        highestSum = quarters[0].Grade + quarters[1].Grade;
+                        bestSecondaryName = quarters[0].Name;
+                    }
+                }
+
+                List<QuarterCourse> secondaries = quarterCourses.Where(item => item.Name == bestSecondaryName).OrderByDescending(item => item.Grade).ToList();
+                bestSecondary[0] = secondaries[0];
+                bestSecondary[1] = secondaries[1];
+            }
 
             return bestSecondary;
         }
 
-        private bool IsFb2(string name)
+        private bool TwoNwOrFlAsLk()
         {
-            return name == "Geschichte" || name == "Politik und Wirtschaft" || name == "Wirtschaftswissens." || name == "Rechtskunde" || name == "Philosophie" || name == "Ev. Religion" || name == "Kath. Religion" || name == "Ethik";
-        }
-
-        private QuarterCourse[] GetBestThird(QuarterCourse[] bestPwOrEc)
-        {
-            QuarterCourse[] bestThird = new QuarterCourse[2];
-
-            List<QuarterCourse> thirds = quarterCourses.Where(item => IsFb2(item.Name) && !(item.Name == "Geschichte" && (item.Semester == 3 || item.Semester == 4)) && !(item == bestPwOrEc[0] && item == bestPwOrEc[1]) && !item.Lk).OrderByDescending(item => item.Grade).ToList();
-            bestThird[0] = thirds[0];
-            bestThird[1] = thirds[1];
-
-            return bestThird;
+            return LkItems.Where(lkItem => IsForeignLanguage(lkItem.Fach)).Count() == 2 || LkItems.Where(lkItem => IsNW(lkItem.Fach)).Count() == 2;
         }
     }
 }

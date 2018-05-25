@@ -121,12 +121,12 @@ namespace GradeControl
             return prediction;
         }
 
-        public static List<CourseItem> GetCourseItems(Course[] courses)
+        public static List<CourseItem> GetCourseItems(MainWindow mw, Course[] courses)
         {
             List<CourseItem> courseItems = new List<CourseItem>();
 
             foreach (var course in courses)
-                courseItems.Add(new CourseItem(course.Name, course.Q1, course.Q2, course.Q3, course.Q4));
+                courseItems.Add(new CourseItem(mw, course.Name, course.Q1, course.Q2, course.Q3, course.Q4));
 
             return courseItems;
         }

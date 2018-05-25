@@ -8,10 +8,12 @@ namespace GradeControl
 {
     public class CourseItem
     {
+        private MainWindow mainWindow;
         private int q1, q2, q3, q4;
 
-        public CourseItem(string name, int q1a, int q2a, int q3a, int q4a)
+        public CourseItem(MainWindow mw, string name, int q1a, int q2a, int q3a, int q4a)
         {
+            mainWindow = mw;
             Fach = name;
             q1 = q1a;
             q2 = q2a;
@@ -34,6 +36,8 @@ namespace GradeControl
                     q1 = 15;
                 else
                     q1 = value;
+
+                mainWindow.UpdateCourse(this);
             }
         }
         public int Q2
@@ -50,6 +54,8 @@ namespace GradeControl
                     q2 = 15;
                 else
                     q2 = value;
+
+                mainWindow.UpdateCourse(this);
             }
         }
         public int Q3
@@ -66,6 +72,8 @@ namespace GradeControl
                     q3 = 15;
                 else
                     q3 = value;
+
+                mainWindow.UpdateCourse(this);
             }
         }
         public int Q4
@@ -82,6 +90,8 @@ namespace GradeControl
                     q4 = 15;
                 else
                     q4 = value;
+
+                mainWindow.UpdateCourse(this);
             }
         }
     }

@@ -33,12 +33,12 @@ namespace GradeControl
             return Grade;
         }
 
-        public static List<ExamItem> GetExamItems(Exam[] exams)
+        public static List<ExamItem> GetExamItems(MainWindow mw, Exam[] exams)
         {
             List<ExamItem> examItems = new List<ExamItem>();
 
             foreach (var exam in exams)
-                examItems.Add(new ExamItem(exam.Name, exam.Grade));
+                examItems.Add(new ExamItem(mw, exam.Name, exam.Grade));
 
             return examItems;
         }

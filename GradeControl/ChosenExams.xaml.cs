@@ -21,6 +21,7 @@ namespace GradeControl
     {
         private MainWindow mainWindow;
         private bool lkChange = true;
+        private int studentId;
         private List<Course> gk3s;
         private List<Course> gk4s;
         private Course[] allCourses;
@@ -37,17 +38,36 @@ namespace GradeControl
             InitializeComponent();
         }
 
-        public ChosenExams(MainWindow mw, Course[] courses)
+        public ChosenExams(MainWindow mw, Course[] courses, Exam[] exams, int sid)
         {
             InitializeComponent();
 
             mainWindow = mw;
             allCourses = courses;
+            studentId = sid;
             lks = getLKs();
             lk1_cb.ItemsSource = getCourseNames(lks);
             lk2_cb.ItemsSource = getCourseNames(lks);
             Course[] gk3s = SetupGK3s();
             gk3_cb.ItemsSource = getCourseNames(gk3s);
+
+            if(exams != null)
+            {
+                if (lk1_cb.Items.Contains(exams[0].Name))
+                    lk1_cb.SelectedItem = exams[0].Name;
+
+                if (lk2_cb.Items.Contains(exams[1].Name))
+                    lk2_cb.SelectedItem = exams[1].Name;
+
+                if (gk3_cb.Items.Contains(exams[2].Name))
+                    gk3_cb.SelectedItem = exams[2].Name;
+
+                if (gk4_cb.Items.Contains(exams[3].Name))
+                    gk4_cb.SelectedItem = exams[3].Name;
+
+                if (gk5_cb.Items.Contains(exams[4].Name))
+                    gk5_cb.SelectedItem = exams[4].Name;
+            }
         }
 
         private Course[] getLKs()
@@ -86,9 +106,9 @@ namespace GradeControl
             return courses.Select(c => c.Name).ToList();
         }
 
-        private bool isGK5(Course gk, string gks4Name, Course[] coursesToBeChecked)
+        private bool isGK5(Course gk, string gks3Name, string gks4Name, Course[] coursesToBeChecked)
         {
-            bool z1 = gk.Name != gks4Name;
+            bool z1 = gk.Name != gks3Name && gk.Name != gks4Name;
             bool z2 = obligatoryCourses(coursesToBeChecked);
             bool z3 = minFBs(coursesToBeChecked, 3);
 
@@ -112,7 +132,6 @@ namespace GradeControl
                     gk3s.RemoveAt(i);
                     i--;
                 }
-
             }
 
             return gk3s.ToArray();
@@ -150,7 +169,7 @@ namespace GradeControl
 
         private Course[] SetupGK5s(Course gk3C, Course gk4C)
         {
-            return gk4s.Where(gk => isGK5(gk, gk4.Name, new Course[] { lk1Course, lk2Course, gk3C, gk4C, gk })).ToArray();
+            return gk4s.Where(gk => isGK5(gk, gk3C.Name, gk4C.Name, new Course[] { lk1Course, lk2Course, gk3C, gk4C, gk })).ToArray();
         }
 
         private Exam[] GetExams()
@@ -167,7 +186,7 @@ namespace GradeControl
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.FillInData(allCourses, GetExams());
+            mainWindow.FillInData(allCourses, GetExams(), studentId);
             this.Close();
         }
 

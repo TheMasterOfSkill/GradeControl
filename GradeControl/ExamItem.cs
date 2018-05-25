@@ -8,12 +8,14 @@ namespace GradeControl
 {
     public class ExamItem
     {
+        private MainWindow mainWindow;
         private int grade;
 
-        public ExamItem(string name, int grade)
+        public ExamItem(MainWindow mw, string name, int gr)
         {
+            mainWindow = mw;
             Fach = name;
-            Notenpkt = grade;
+            grade = gr;
         }
 
         public string Fach { get; set; }
@@ -31,6 +33,8 @@ namespace GradeControl
                     grade = 15;
                 else
                     grade = value;
+
+                mainWindow.UpdateExam(this);
             }
         }
     }

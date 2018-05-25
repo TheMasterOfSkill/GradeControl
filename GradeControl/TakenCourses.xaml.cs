@@ -19,12 +19,287 @@ namespace GradeControl
     /// </summary>
     public partial class TakenCourses : Window
     {
+        private int studentId;
         private MainWindow mainWindow;
+        private Exam[] exams;
 
-        public TakenCourses(MainWindow mw)
+        public TakenCourses(MainWindow mw, int sid)
         {
             InitializeComponent();
             mainWindow = mw;
+            studentId = sid;
+        }
+
+        public TakenCourses(MainWindow mw, Course[] courses, Exam[] exs, int sid)
+        {
+            InitializeComponent();
+            mainWindow = mw;
+            exams = exs;
+            studentId = sid;
+
+            foreach(Course course in courses)
+            {
+                switch(course.Name)
+                {
+                    case "Deutsch":
+                        d_e1.IsChecked = course.E1 >= 0;
+                        d_e2.IsChecked = course.E2 >= 0;
+                        d_q1.IsChecked = course.Q1 >= 0;
+                        d_q2.IsChecked = course.Q2 >= 0;
+                        d_q3.IsChecked = course.Q3 >= 0;
+                        d_q4.IsChecked = course.Q4 >= 0;
+                        d_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Englisch":
+                        e_e1.IsChecked = course.E1 >= 0;
+                        e_e2.IsChecked = course.E2 >= 0;
+                        e_q1.IsChecked = course.Q1 >= 0;
+                        e_q2.IsChecked = course.Q2 >= 0;
+                        e_q3.IsChecked = course.Q3 >= 0;
+                        e_q4.IsChecked = course.Q4 >= 0;
+                        e_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Französisch":
+                        f_e1.IsChecked = course.E1 >= 0;
+                        f_e2.IsChecked = course.E2 >= 0;
+                        f_q1.IsChecked = course.Q1 >= 0;
+                        f_q2.IsChecked = course.Q2 >= 0;
+                        f_q3.IsChecked = course.Q3 >= 0;
+                        f_q4.IsChecked = course.Q4 >= 0;
+                        f_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Italienisch":
+                        it_e1.IsChecked = course.E1 >= 0;
+                        it_e2.IsChecked = course.E2 >= 0;
+                        it_q1.IsChecked = course.Q1 >= 0;
+                        it_q2.IsChecked = course.Q2 >= 0;
+                        it_q3.IsChecked = course.Q3 >= 0;
+                        it_q4.IsChecked = course.Q4 >= 0;
+                        it_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Spanisch":
+                        sp_e1.IsChecked = course.E1 >= 0;
+                        sp_e2.IsChecked = course.E2 >= 0;
+                        sp_q1.IsChecked = course.Q1 >= 0;
+                        sp_q2.IsChecked = course.Q2 >= 0;
+                        sp_q3.IsChecked = course.Q3 >= 0;
+                        sp_q4.IsChecked = course.Q4 >= 0;
+                        sp_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Russisch":
+                        ru_e1.IsChecked = course.E1 >= 0;
+                        ru_e2.IsChecked = course.E2 >= 0;
+                        ru_q1.IsChecked = course.Q1 >= 0;
+                        ru_q2.IsChecked = course.Q2 >= 0;
+                        ru_q3.IsChecked = course.Q3 >= 0;
+                        ru_q4.IsChecked = course.Q4 >= 0;
+                        ru_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Griechisch":
+                        gr_e1.IsChecked = course.E1 >= 0;
+                        gr_e2.IsChecked = course.E2 >= 0;
+                        gr_q1.IsChecked = course.Q1 >= 0;
+                        gr_q2.IsChecked = course.Q2 >= 0;
+                        gr_q3.IsChecked = course.Q3 >= 0;
+                        gr_q4.IsChecked = course.Q4 >= 0;
+                        gr_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Latein":
+                        l_e1.IsChecked = course.E1 >= 0;
+                        l_e2.IsChecked = course.E2 >= 0;
+                        l_q1.IsChecked = course.Q1 >= 0;
+                        l_q2.IsChecked = course.Q2 >= 0;
+                        l_q3.IsChecked = course.Q3 >= 0;
+                        l_q4.IsChecked = course.Q4 >= 0;
+                        l_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Musik":
+                        mu_e1.IsChecked = course.E1 >= 0;
+                        mu_e2.IsChecked = course.E2 >= 0;
+                        mu_q1.IsChecked = course.Q1 >= 0;
+                        mu_q2.IsChecked = course.Q2 >= 0;
+                        mu_q3.IsChecked = course.Q3 >= 0;
+                        mu_q4.IsChecked = course.Q4 >= 0;
+                        mu_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Kunst":
+                        ku_e1.IsChecked = course.E1 >= 0;
+                        ku_e2.IsChecked = course.E2 >= 0;
+                        ku_q1.IsChecked = course.Q1 >= 0;
+                        ku_q2.IsChecked = course.Q2 >= 0;
+                        ku_q3.IsChecked = course.Q3 >= 0;
+                        ku_q4.IsChecked = course.Q4 >= 0;
+                        ku_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Darstellendes Spiel":
+                        ds_e1.IsChecked = course.E1 >= 0;
+                        ds_e2.IsChecked = course.E2 >= 0;
+                        ds_q1.IsChecked = course.Q1 >= 0;
+                        ds_q2.IsChecked = course.Q2 >= 0;
+                        ds_q3.IsChecked = course.Q3 >= 0;
+                        ds_q4.IsChecked = course.Q4 >= 0;
+                        break;
+
+                    case "Geschichte":
+                        g_e1.IsChecked = course.E1 >= 0;
+                        g_e2.IsChecked = course.E2 >= 0;
+                        g_q1.IsChecked = course.Q1 >= 0;
+                        g_q2.IsChecked = course.Q2 >= 0;
+                        g_q3.IsChecked = course.Q3 >= 0;
+                        g_q4.IsChecked = course.Q4 >= 0;
+                        g_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Politik und Wirtschaft":
+                        pw_e1.IsChecked = course.E1 >= 0;
+                        pw_e2.IsChecked = course.E2 >= 0;
+                        pw_q1.IsChecked = course.Q1 >= 0;
+                        pw_q2.IsChecked = course.Q2 >= 0;
+                        pw_q3.IsChecked = course.Q3 >= 0;
+                        pw_q4.IsChecked = course.Q4 >= 0;
+                        pw_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Wirtschaftswissens.":
+                        ec_e1.IsChecked = course.E1 >= 0;
+                        ec_e2.IsChecked = course.E2 >= 0;
+                        ec_q1.IsChecked = course.Q1 >= 0;
+                        ec_q2.IsChecked = course.Q2 >= 0;
+                        ec_q3.IsChecked = course.Q3 >= 0;
+                        ec_q4.IsChecked = course.Q4 >= 0;
+                        ec_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Rechtskunde":
+                        law_e1.IsChecked = course.E1 >= 0;
+                        law_e2.IsChecked = course.E2 >= 0;
+                        law_q1.IsChecked = course.Q1 >= 0;
+                        law_q2.IsChecked = course.Q2 >= 0;
+                        law_q3.IsChecked = course.Q3 >= 0;
+                        law_q4.IsChecked = course.Q4 >= 0;
+                        break;
+
+                    case "Philosophie":
+                        phil_e1.IsChecked = course.E1 >= 0;
+                        phil_e2.IsChecked = course.E2 >= 0;
+                        phil_q1.IsChecked = course.Q1 >= 0;
+                        phil_q2.IsChecked = course.Q2 >= 0;
+                        phil_q3.IsChecked = course.Q3 >= 0;
+                        phil_q4.IsChecked = course.Q4 >= 0;
+                        break;
+
+                    case "Erdkunde":
+                        ek_e1.IsChecked = course.E1 >= 0;
+                        ek_e2.IsChecked = course.E2 >= 0;
+                        ek_q1.IsChecked = course.Q1 >= 0;
+                        ek_q2.IsChecked = course.Q2 >= 0;
+                        ek_q3.IsChecked = course.Q3 >= 0;
+                        ek_q4.IsChecked = course.Q4 >= 0;
+                        ek_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Ev. Religion":
+                        evrel_e1.IsChecked = course.E1 >= 0;
+                        evrel_e2.IsChecked = course.E2 >= 0;
+                        evrel_q1.IsChecked = course.Q1 >= 0;
+                        evrel_q2.IsChecked = course.Q2 >= 0;
+                        evrel_q3.IsChecked = course.Q3 >= 0;
+                        evrel_q4.IsChecked = course.Q4 >= 0;
+                        evrel_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Kath. Religion":
+                        kathrel_e1.IsChecked = course.E1 >= 0;
+                        kathrel_e2.IsChecked = course.E2 >= 0;
+                        kathrel_q1.IsChecked = course.Q1 >= 0;
+                        kathrel_q2.IsChecked = course.Q2 >= 0;
+                        kathrel_q3.IsChecked = course.Q3 >= 0;
+                        kathrel_q4.IsChecked = course.Q4 >= 0;
+                        kathrel_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Ethik":
+                        eth_e1.IsChecked = course.E1 >= 0;
+                        eth_e2.IsChecked = course.E2 >= 0;
+                        eth_q1.IsChecked = course.Q1 >= 0;
+                        eth_q2.IsChecked = course.Q2 >= 0;
+                        eth_q3.IsChecked = course.Q3 >= 0;
+                        eth_q4.IsChecked = course.Q4 >= 0;
+                        break;
+
+                    case "Mathematik":
+                        m_e1.IsChecked = course.E1 >= 0;
+                        m_e2.IsChecked = course.E2 >= 0;
+                        m_q1.IsChecked = course.Q1 >= 0;
+                        m_q2.IsChecked = course.Q2 >= 0;
+                        m_q3.IsChecked = course.Q3 >= 0;
+                        m_q4.IsChecked = course.Q4 >= 0;
+                        m_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Biologie":
+                        b_e1.IsChecked = course.E1 >= 0;
+                        b_e2.IsChecked = course.E2 >= 0;
+                        b_q1.IsChecked = course.Q1 >= 0;
+                        b_q2.IsChecked = course.Q2 >= 0;
+                        b_q3.IsChecked = course.Q3 >= 0;
+                        b_q4.IsChecked = course.Q4 >= 0;
+                        b_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Chemie":
+                        c_e1.IsChecked = course.E1 >= 0;
+                        c_e2.IsChecked = course.E2 >= 0;
+                        c_q1.IsChecked = course.Q1 >= 0;
+                        c_q2.IsChecked = course.Q2 >= 0;
+                        c_q3.IsChecked = course.Q3 >= 0;
+                        c_q4.IsChecked = course.Q4 >= 0;
+                        c_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Physik":
+                        p_e1.IsChecked = course.E1 >= 0;
+                        p_e2.IsChecked = course.E2 >= 0;
+                        p_q1.IsChecked = course.Q1 >= 0;
+                        p_q2.IsChecked = course.Q2 >= 0;
+                        p_q3.IsChecked = course.Q3 >= 0;
+                        p_q4.IsChecked = course.Q4 >= 0;
+                        p_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Informatik":
+                        inf_e1.IsChecked = course.E1 >= 0;
+                        inf_e2.IsChecked = course.E2 >= 0;
+                        inf_q1.IsChecked = course.Q1 >= 0;
+                        inf_q2.IsChecked = course.Q2 >= 0;
+                        inf_q3.IsChecked = course.Q3 >= 0;
+                        inf_q4.IsChecked = course.Q4 >= 0;
+                        inf_lk.IsChecked = course.LK;
+                        break;
+
+                    case "Sport":
+                        pe_e1.IsChecked = course.E1 >= 0;
+                        pe_e2.IsChecked = course.E2 >= 0;
+                        pe_q1.IsChecked = course.Q1 >= 0;
+                        pe_q2.IsChecked = course.Q2 >= 0;
+                        pe_q3.IsChecked = course.Q3 >= 0;
+                        pe_q4.IsChecked = course.Q4 >= 0;
+                        pe_lk.IsChecked = course.LK;
+                        pe_3std.IsChecked = course.Pe3Std;
+                        break;
+
+                }
+            }
         }
 
         private bool IsZ1() //z1: Fremdsprache von E1-Q4
@@ -438,7 +713,7 @@ namespace GradeControl
 
             Course[] courses = new Course[] { getCourseD(), getCourseE(), getCourseF(), getCourseIt(), getCourseSp(), getCourseRu(), getCourseGr(), getCourseL(), getCourseMu(), getCourseKu(), getCourseDs(), getCourseG(), getCoursePw(), getCourseEc(), getCourseLaw(), getCoursePhil(), getCourseGeo(), getCourseEvrel(), getCourseKathrel(), getCourseEth(), getCourseM(), getCourseB(), getCourseC(), getCourseP(), getCourseInf(), getCoursePe() };
 
-            ChosenExams chosenExams = new ChosenExams(mainWindow, courses);
+            ChosenExams chosenExams = new ChosenExams(mainWindow, courses, exams, studentId);
             chosenExams.Show();
             this.Close();
         }
